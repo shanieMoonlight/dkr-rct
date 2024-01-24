@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build  -f Dockerfile.dev -t shaneyboy/react-frontend-dev .
+
+script:
+  - docker run -e CI=true shaneyboy/react-frontend-dev npm run test

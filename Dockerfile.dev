@@ -22,12 +22,12 @@ CMD ["npm", "run", "start-docker"]
 ##############################################################
 
 #Build
-# docker build  -f Dockerfile.dev -t shaneyboy/reactfrontenddev --progress=plain .
+# docker build  -f Dockerfile.dev -t shaneyboy/react-frontend-dev --progress=plain .
 
-#Run
-# docker run shaneyboy/reactfrontenddev npm run test
+#Run Test
+# docker run shaneyboy/react-frontend-dev npm run test
 
 #View Image Files
-#docker run -it shaneyboy/reactfrontenddev sh
+#docker run -it shaneyboy/react-frontend-dev sh
 
 ##############################################################
