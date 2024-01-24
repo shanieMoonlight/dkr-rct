@@ -1,0 +1,33 @@
+#########
+#Dev only
+#########
+
+# Use an exixting Docker Image as a base
+FROM node:alpine
+
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+WORKDIR /app
+
+#Install deps
+#Copy package.json for better caching
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+#Default command
+# CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start-docker"]
+
+##############################################################
+
+#Build
+# docker build  -f Dockerfile.dev -t shaneyboy/reactfrontenddev --progress=plain .
+
+#Run
+# docker run shaneyboy/reactfrontenddev npm run test
+
+#View Image Files
+#docker run -it shaneyboy/reactfrontenddev sh
+
+##############################################################

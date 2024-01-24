@@ -1,0 +1,41 @@
+version: '3'
+services: 
+  web: 
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: 
+      - '5001:3000'
+    # env_file:
+    #   - environments/dev.env
+    volumes:
+      # - /usr/app/package-lock.json
+      - .:/usr/app
+      # - /usr/app/node_modules/
+    command: 
+      - npm
+      - run
+      - test-docker
+      - a
+  tests:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      # - /usr/app/package-lock.json
+      - .:/usr/app
+      # - /usr/app/node_modules/
+    command: 
+      - npm
+      - run
+      - test
+
+    # develop:
+    #   watch:
+    #     - action: sync
+    #       path: .
+    #       target: .
+
+
+
+    #docker run -it image_name sh
