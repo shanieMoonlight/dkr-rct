@@ -23,6 +23,7 @@ RUN npm run build
 
 #Serve the built files
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 ##############################################################
