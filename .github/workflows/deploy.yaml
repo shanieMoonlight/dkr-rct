@@ -5,7 +5,6 @@ on:
       - main # check your repo, your default branch might be master!
 
 jobs:
-  script: echo "name is ???????"
   build:
     runs-on: ubuntu-latest
     steps:
