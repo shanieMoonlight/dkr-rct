@@ -29,5 +29,6 @@ jobs:
           region: eu-west-1
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
+
 # #More info
 # #https://github.com/einaregilsson/beanstalk-deploy
