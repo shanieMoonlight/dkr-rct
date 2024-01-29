@@ -1,4 +1,6 @@
 sudo: required
+language: generic
+
 services:
   - docker
 
@@ -8,17 +10,17 @@ before_install:
 script:
   - docker run -e CI=true shaneyboy/react-frontend-dev npm run test
 
-# deploy:
-#   provider: elasticbeanstalk
-#   access_key_id: "$AWS_ACCESS_KEY"
-#   secret_access_key: "$AWS_SECRET_KEY"
-#   # access_key_id:
-#   #   secure: $AWS_ACCESS_KEY
-#   # secret_access_key:
-#   #   secure: $AWS_SECRET_KEY
-#   region: "eu-west-1"
-#   app: "dkr-rct"
-#   env: "Dkr-rct-irl-env"
-#   bucket_name: "elasticbeanstalk-eu-west-1-992382540430"
-#   on:
-#     branch: main
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: "$AWS_ACCESS_KEY"
+  region: "eu-west-1"
+  secret_access_key: "$AWS_SECRET_KEY"
+  # access_key_id:
+  #   secure: $AWS_ACCESS_KEY
+  # secret_access_key:
+  #   secure: $AWS_SECRET_KEY
+  app: "dkr-rct"
+  env: "Dkr-rct-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-992382540430"
+  on:
+    branch: main

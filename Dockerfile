@@ -11,14 +11,14 @@ WORKDIR /app
 #Install deps
 #Copy package.json separately for better caching
 COPY package.json .
-RUN npm install
+RUN yarn install
 
 #Copy the rest
 COPY . .
 
 #Buld the app /usr/app/build
 #This will live in 
-RUN npm run build
+RUN yarn run build
 
 
 #Serve the built files
