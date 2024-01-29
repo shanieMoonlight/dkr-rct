@@ -19,8 +19,8 @@ deploy:
   #   secure: $AWS_ACCESS_KEY
   # secret_access_key:
   #   secure: $AWS_SECRET_KEY
-  app: "dkr-rct"
-  env: "Dkr-rct-env"
+  app: "getting-started-app"
+  env: "Getting-started-app-env"
   bucket_name: "elasticbeanstalk-eu-west-1-992382540430"
   on:
     branch: main
