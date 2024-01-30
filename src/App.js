@@ -25,7 +25,7 @@ function App() {
         >
           Learn Docker
         </a>
-        Don't be scared Homey*/-?-*-8-*-?-/*
+        Changed From Feature*/-?-*-8-*-?-/*
       </header>
     </div>
   );
