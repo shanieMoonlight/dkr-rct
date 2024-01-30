@@ -10,10 +10,15 @@ before_install:
 script:
   - docker run -e CI=true shaneyboy/react-frontend-dev yarn run test
 
+# safelist
+branches:
+  only:
+  - main
+
 deploy:
   provider: elasticbeanstalk
-  access_key_id: "$AWS_ACCESS_KEY"
   region: "eu-west-1"
+  access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
   # access_key_id:
   #   secure: $AWS_ACCESS_KEY
