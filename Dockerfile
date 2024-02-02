@@ -5,7 +5,6 @@
 # Use an exixting Docker Image as a base
 FROM node:alpine as builder
 
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
 WORKDIR /app
 
 #Install deps

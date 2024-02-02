@@ -9,7 +9,7 @@ services:
     # env_file:
     #   - environments/dev.env
     volumes:
-      # - /usr/app/package-lock.json
+      - /usr/app/package-lock.json
       - .:/usr/app
       # - /usr/app/node_modules/
     command: 
